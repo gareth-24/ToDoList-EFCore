@@ -2,7 +2,7 @@
 
 #### By _**Gareth Grindeland**_
 
-#### _A web application built with C#/.NET using MVC and RESTful routing._
+#### _A web application built with C#/.NET, MySQL, and EF Core._
 
 ## Technologies Used
 
