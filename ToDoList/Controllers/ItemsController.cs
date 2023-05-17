@@ -25,7 +25,7 @@ namespace ToDoList.Controllers
         return View();
       }
 
-      [HttpPost]
+    [HttpPost]
     public ActionResult Create(Item item)
     {
       _db.Items.Add(item);
@@ -37,6 +37,20 @@ namespace ToDoList.Controllers
     {
       Item thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
       return View(thisItem);
+    }
+
+    public ActionResult Edit(int id)
+    {
+        Item thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
+        return View(thisItem);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Item item)
+    {
+        _db.Items.Update(item);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
     }
   }
 }
